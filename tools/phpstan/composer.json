@@ -1,0 +1,21 @@
+{
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "AntoineDly\\Logger\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AntoineDly\\Logger\\": "tests/"
+    }
+  },
+  "scripts": {
+    "phpstan": "vendor/bin/phpstan -c phpstan.neon"
+  }
+}
