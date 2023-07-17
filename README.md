@@ -29,8 +29,7 @@ Monolog is licensed under the MIT License - see the [LICENSE](LICENSE) file for 
 ### Acknowledgements
 
 This library is heavily inspired by Jordi Boggiano's [Monolog](https://logbook.readthedocs.io/en/stable/)
-library, although it was a lot lighter than it. It was also heavily inspired by Gio's [Logger]()
-
+library, although it is a lot lighter than it.
 ### Contributing
 
 If you want to contribute, make sure to run those 3 steps before submitting a PR : 
