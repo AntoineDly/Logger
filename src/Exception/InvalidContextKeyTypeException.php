@@ -15,6 +15,6 @@ namespace AntoineDly\Logger\Exception;
 
 use Exception;
 
-class InvalidContextKeyTypeException extends Exception
+final class InvalidContextKeyTypeException extends Exception
 {
 }

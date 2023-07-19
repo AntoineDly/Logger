@@ -15,6 +15,6 @@ namespace AntoineDly\Logger\Exception;
 
 use Exception;
 
-class InvalidRegistryException extends Exception
+final class InvalidRegistryException extends Exception
 {
 }

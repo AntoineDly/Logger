@@ -15,6 +15,6 @@ namespace AntoineDly\Logger\Error;
 
 use Error;
 
-class LevelNotFoundError extends Error
+final class LevelNotFoundError extends Error
 {
 }
