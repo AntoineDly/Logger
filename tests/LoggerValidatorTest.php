@@ -13,6 +13,9 @@ declare(strict_types=1);
 
 namespace AntoineDly\Logger;
 
+use AntoineDly\Logger\Exception\InvalidContextKeyTypeException;
+use AntoineDly\Logger\Exception\InvalidContextValueTypeException;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class LoggerValidatorTest extends TestCase
@@ -25,6 +28,7 @@ class LoggerValidatorTest extends TestCase
 
     public function testCheckContextKeyError(): void
     {
+        $this->expectException(InvalidContextKeyTypeException::class);
         $this->expectExceptionMessage(message: "Key of context's element should be a string, integer provided.");
         /** @phpstan-ignore-next-line */
         LoggerValidator::checkContext(context: ["test"]);
@@ -32,6 +36,7 @@ class LoggerValidatorTest extends TestCase
 
     public function testCheckContextValueError(): void
     {
+        $this->expectException(InvalidContextValueTypeException::class);
         $this->expectExceptionMessage(message: "Value of context's element should be a string, integer provided.");
         /** @phpstan-ignore-next-line */
         LoggerValidator::checkContext(context: ["test" => 0]);
@@ -45,12 +50,14 @@ class LoggerValidatorTest extends TestCase
 
     public function testCheckLevelNotString(): void
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(message: "Level parameter should be a string, integer provided.");
         LoggerValidator::checkLevel(level: 2);
     }
 
     public function testCheckLevelNotALevel(): void
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(message: "Level definitelyNotALogLevel does not exist.");
         LoggerValidator::checkLevel(level: "definitelyNotALogLevel");
     }
